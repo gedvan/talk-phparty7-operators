@@ -1,0 +1,47 @@
+
+Null Coalesce Operator
+======================
+
+- O operador null coalesce é uma "facilidade sintática" para algumas situações que se repetem com frequência no desenvolvimento cotidiano
+- Quando se deseja testar se um elemento está definido ou não antes de utilizá-lo, de modo a evitar erros
+- Esses elementos podem ser índices de arrays, propriedades de objetos, variáveis, etc.
+
+- Exemplos:
+
+$valor = $array_valores['nome'];
+// Pode lançar um WARNING, caso a chave 'nome' não esteja presente no array
+if ($valor === null) {
+	$valor = 'Valor padrão';
+}
+// Código mais verboso
+
+
+- Evitando o WARNING:
+
+if (isset($array_valores['nome'])) {
+	$valor = $array_valores['nome'];
+} else {
+	$valor = 'Valor padrão';
+}
+// Código ainda verboso e repetitivo
+
+
+- Com o operador ternário:
+
+$valor = isset($array_valores['nome']) ? $array_valores['nome'] : 'Valor padrão';
+// Evita o WARNING e o IF, mas o código ainda está repetitivo
+
+
+- Com o operador null coalesce:
+
+$valor = $array_valores['nome'] ?? 'Valor padrão';
+
+// Mais enxuto, impossível
+
+
+- O operador ?? pode ainda ser aninhado:
+
+$valor = $array_valores['nome'] ?? $valores_alterntivos['nome'] ?? 'Valor padrão';
+
+
+
