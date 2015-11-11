@@ -44,4 +44,15 @@ $valor = $array_valores['nome'] ?? 'Valor padrão';
 $valor = $array_valores['nome'] ?? $valores_alterntivos['nome'] ?? 'Valor padrão';
 
 
+Spaceship Operator
+==================
+
+- O operador spaceship é um novo operador de comparação que funciona da seguinte maneira:
+  - Retorna 0 se os operandos forem iguais
+  - Retorna -1 se o operando da esquerda for menor
+  - Retorna 1 se o operando da esquerda for maior
+
+- Não é tão útil quanto o operator null coalesce, mas o nome é muito melhor
+
+- Exemplos:
 
