@@ -2,7 +2,13 @@
 Null Coalesce Operator
 ======================
 
-- O operador null coalesce é uma "facilidade sintática" para algumas situações que se repetem com frequência no desenvolvimento cotidiano
+- O operador null coalesce (??) retorna o primeiro operando, se ele existir e não for nulo, ou o segundo operando caso contrário
+
+- Por exemplo, a expressão: $a ?? $b
+   Se $a existir e não for NULL, retorn $a
+   Se não, retorna $b
+
+- Na verdade, o operador ?? é uma "facilidade sintática" para algumas situações que se repetem com frequência no desenvolvimento PHP:
 - Quando se deseja testar se um elemento está definido ou não antes de utilizá-lo, de modo a evitar erros
 - Esses elementos podem ser índices de arrays, propriedades de objetos, variáveis, etc.
 
@@ -39,9 +45,17 @@ $valor = $array_valores['nome'] ?? 'Valor padrão';
 // Mais enxuto, impossível
 
 
-- O operador ?? pode ainda ser aninhado:
+- O operador ?? pode ainda ser aninhado (com associatividade à direita):
 
 $valor = $array_valores['nome'] ?? $valores_alterntivos['nome'] ?? 'Valor padrão';
+
+- Precedência
+
+[ tabela de precedência de operadores em PHP ]
+http://php.net/manual/en/language.operators.precedence.php
+
+- Exemplos:
+
 
 
 Spaceship Operator

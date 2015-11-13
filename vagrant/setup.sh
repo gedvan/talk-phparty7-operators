@@ -23,6 +23,7 @@ a2enconf php7
 
 rm -rf /var/www/html
 ln -s /vagrant/www /var/www/html
+ln -s /vagrant/php.ini /usr/local/php7/etc/php.ini
 
 sudo service apache2 restart
 
