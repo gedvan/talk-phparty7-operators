@@ -49,13 +49,26 @@ $valor = $array_valores['nome'] ?? 'Valor padrão';
 
 $valor = $array_valores['nome'] ?? $valores_alterntivos['nome'] ?? 'Valor padrão';
 
+$valor = ($array_valores['nome'] ?? ($valores_alterntivos['nome'] ?? 'Valor padrão'));
+
+
 - Precedência
 
 [ tabela de precedência de operadores em PHP ]
 http://php.net/manual/en/language.operators.precedence.php
 
-- Exemplos:
+- Exemplo:
 
+$a = usar_nome_padrao() && empty($nome_padrao) ? $defaults['nome'] ?? 'Unknown' : $nome_padrao . ' (padrão)';
+
+                                                                                  $nome_padrao . ' (padrão)'
+
+     usar_nome_padrao() && empty($nome_padrao)
+                                                 $defaults['nome'] ?? 'Unknown'
+
+$a = [ -------------- valor ---------------- ] ? [ ------- valor ------------ ] : [ -------- valor -------- ];
+
+$a = [ ---------------------------------------------- valor ----------------------------------------------- ];
 
 
 Spaceship Operator
@@ -69,4 +82,17 @@ Spaceship Operator
 - Não é tão útil quanto o operator null coalesce, mas o nome é muito melhor
 
 - Exemplos:
+
+[ tabela com vários exemplos do spaceship operator ]
+
+Mais info: http://php.net/manual/en/language.operators.comparison.php
+
+- Precedência e Associatividade
+
+[ tabela de precedência de operadores em PHP ]
+http://php.net/manual/en/language.operators.precedence.php
+
+- Exemplo de utilização
+
+
 
