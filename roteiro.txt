@@ -95,4 +95,3 @@ http://php.net/manual/en/language.operators.precedence.php
 - Exemplo de utilização
 
 
-
